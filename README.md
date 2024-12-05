@@ -2,6 +2,10 @@
 
 Implementation-of-Half-Adder-and-Half Subtractor-circuit
 
+NAME:G.MIHIK JAIN
+
+REF NO:24001881
+
 **AIM:**
 
 To design a half adder and half subtractor circuit and verify its truth table in Quartus using Verilog programming.
@@ -34,6 +38,11 @@ Borrow = A’B
 Figure -02 HALF Subtractor
 
 **Truthtable**
+HALF ADDER:
+![half-adder truth table](https://github.com/user-attachments/assets/8a81f762-0f2d-4fc9-a309-e8b1fa1c4928)
+
+HALF SUBRACTOR:
+![image](https://github.com/user-attachments/assets/b18963e2-91ab-42a7-bce3-f5b93afca5ed)
 
 **Procedure**
 
@@ -47,15 +56,46 @@ Figure -02 HALF Subtractor
 
 5.	For different input combinations generate the timing diagram.
 
-
 **Program:**
 
 /* Program to design a half adder and full adder circuit and verify its truth table in quartus using Verilog programming.
 
-Developed by: RegisterNumber:*/
+HALF ADDER:
+module half_adder_structural(
+input a,//Input'a'
+input b,//Input'b'
+output s,//Output's'(Sum)
+output c//Output'c'(Carry)
+);
+xor gate_xor(s,a,b);//XOR gate for sum
+and gate_xor(c,a,b);//AND gate for carry
+endmodule
+
+HALF SUBRACTOR:
+module halfsub(diff,borr,a,b);
+input a,b;
+output diff,borr;
+wire w1;
+xor g1(diff,a,b);
+not g2(w1,a);
+and g3(borr,w1,b);
+endmodule
 
 **RTL Schematic**
 
+HALF ADDER:
+![image](https://github.com/user-attachments/assets/49644bd5-7de4-422f-9e66-ea4ffd7aeef3)
+
+HALF SUBRACTOR:
+![half sub rtl](https://github.com/user-attachments/assets/a5656e87-f51d-4bf4-8fdb-9afca076368e)
+
 **Output/TIMING Waveform**
+HALF ADDER:
+![Screenshot 2024-12-05 115502](https://github.com/user-attachments/assets/3b69777a-414f-4f0e-9764-6a2be136f23f)
+
+HALF SUBRACTOR:
+![half sub output](https://github.com/user-attachments/assets/c3f4b554-eff2-4274-af71-ff6489cc9e2d)
 
 **Result:**
+
+Thus we design a half adder and half subtractor circuit and verify its truth table in Quartus using Verilog programming.
